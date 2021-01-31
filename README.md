@@ -1,5 +1,12 @@
-# PRN
-A path-based relation network for knowledge completion
+# A path-based relation network for knowledge completion
+This is an implementation of a path-based relation network model for knowledge completion.
+If you have any question or comments, please feel free to contact us by email [leewangon@gmail.com].
+
+# Data description
+-data/<DATASETS/
+
+
+
 
 
 
