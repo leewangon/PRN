@@ -7,6 +7,13 @@ data/<DATASETS>/
     train.tsv : train triples
     dev.tsv : dev triples
     test.tsv : test triples
+data/<DATASETS>/paths/
+    <RELATIONS>.txt : Path Ranking Algorithm을 통해 추출된 Relation Paths
+data/<DATASETS>/sentences/
+    <RELATIONS>_sentences.txt : Sentence Generator를 통해 생성된 각 Relation의 Sentence Files
+data/<DATASETS>/story/
+    <RELATIONS>_story.txt : Story Generator를 통해 생성된 각 Relation의 Story Files
+        
     
 # Running
 ## 1. Sentence Builder
