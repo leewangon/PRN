@@ -3,13 +3,12 @@ This is an implementation of a path-based relation network model for knowledge c
 If you have any question or comments, please feel free to contact us by email [leewangon@gmail.com].
 
 # Data description
--data/<DATASETS/
-
-
-
-
-
-
+data/<DATASETS>/
+    train.tsv : train triples
+    dev.tsv : dev triples
+    test.tsv : test triples
+    
+# Running
 ## 1. Sentence Builder
 
     > python sentenceBuilder.py {kb_path} {relation_list} {pra_output_path} {sentence_output_path}
@@ -18,8 +17,6 @@ If you have any question or comments, please feel free to contact us by email [l
 Jeanne_Moreau	/people/person/place_of_birth	inv_/people/person/places_lived./people/place_lived/location	inv_/people/person/nationality	Germany
 Albert_Wolsky	/people/person/place_of_birth	inv_/people/person/places_lived./people/place_lived/location	inv_/people/person/nationality	Germany
 Roman_Polanski	/people/person/place_of_birth	inv_/people/person/places_lived./people/place_lived/location	inv_/people/person/nationality	Germany
-Catherine_Deneuve	/people/person/place_of_birth	inv_/people/person/places_lived./people/place_lived/location	inv_/people/person/nationality	Germany
-Charles_Baudelaire	/people/person/place_of_birth	inv_/people/person/places_lived./people/place_lived/location	inv_/people/person/nationality	Germany
 
 ## 2. Story Generator
 
@@ -37,6 +34,26 @@ Charles_Baudelaire	/people/person/place_of_birth	inv_/people/person/places_lived
 ## 3. A path based relation network learning for knowledge completion
 
     > python linkPrediction.py {target_relation} {target_story_path} {output_path}
+
+options of linkPrediction.py
+[--epochs] = 2, 
+[--hidden_dims_g] = [256,256,256], 
+[--output_dim_g] = 256, 
+[--hidden_dims_f] = [256,512], 
+[--hidden_dim_lstm] = 32, 
+[--lstm_layers] = 1, 
+[--emb_dim] = 32, 
+[--batch_size] = 20, 
+[--dropout] = True, 
+[--only_relevant] = False,
+[--weight_decay] = 0,
+[--learning_rate] = 1e-4,
+[--test_on_test] = True,
+[--test_jointly] = False,
+[--cuda] = True,
+[--load] = False,
+[--no_save] = False
+
 
 > **Output Example**
 > david_j /people/person/nationality ? united_kingdom -> united_states_of_america (X) 
